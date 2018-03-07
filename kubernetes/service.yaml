@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: gitops-hello-world-gcb
+  namespace: staging
+spec:
+  ports:
+  - name: http
+    port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: gitops-hello-world-gcb
+  type: LoadBalancer

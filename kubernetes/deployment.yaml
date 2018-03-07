@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  labels:
+    app: gitops-hello-world-gcb
+  name: gitops-hello-world-gcb
+  namespace: staging
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitops-hello-world-gcb
+  template:
+    metadata:
+      labels:
+        app: gitops-hello-world-gcb
+    spec:
+      containers:
+      - name: gitops-hello-world-gcb
+        image: gcr.io/k8s-cluster-cn/hello-world-gcb

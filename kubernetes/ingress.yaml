@@ -1,0 +1,23 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: gitops-hello-world-gcb-ingress
+  namespace: staging
+  labels:
+    name: gitops-hello-world-gcb-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: 'true'
+spec:
+  tls:
+  - hosts:
+    - hello-world.staging.clair.crowdynews.com
+    secretName: gitops-hello-world-tls
+  rules:
+  - host: hello-world.staging.clair.crowdynews.com
+    http:
+      paths:
+      - path: "/"
+        backend:
+          serviceName: gitops-hello-world-gcb
+          servicePort: 8000

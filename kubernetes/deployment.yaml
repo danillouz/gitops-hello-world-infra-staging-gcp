@@ -1,5 +1,5 @@
-kind: Deployment
 apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
   labels:
     app: gitops-hello-world-gcb
@@ -16,5 +16,5 @@ spec:
         app: gitops-hello-world-gcb
     spec:
       containers:
-      - name: gitops-hello-world-gcb
-        image: gcr.io/k8s-cluster-cn/hello-world-gcb
+      - image: gcr.io/k8s-cluster-cn/hello-world-gcb:c5e0dc4
+        name: gitops-hello-world-gcb

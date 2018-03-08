@@ -4,7 +4,7 @@
 # _CLOUDSDK_CONTAINER_CLUSTER
 
 steps:
-  # Generate a kube config file for the given GKE cluster.
+  # Generate a kube config file for the given GKE cluster
   - name: 'gcr.io/cloud-builders/gcloud'
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=${_CLOUDSDK_COMPUTE_ZONE}'
@@ -25,8 +25,7 @@ steps:
       - name: 'kube'
         path: /kube
 
-  # Recursively apply the configuration files under the kubernetes
-  # directory.
+  # Recursively apply the configuration files under the kubernetes directory
   - name: 'gcr.io/cloud-builders/kubectl'
     env:
       - 'KUBECONFIG=/kube/config'

@@ -1,7 +1,9 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: gitops-hello-world-gcb-staging
+  name: gitops-hello-world-gcb
+  labels:
+    app: gitops-hello-world-gcb
   namespace: staging
 spec:
   ports:
@@ -11,4 +13,3 @@ spec:
     protocol: TCP
   selector:
     app: gitops-hello-world-gcb
-  type: ClusterIP

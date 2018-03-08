@@ -11,4 +11,4 @@ spec:
     protocol: TCP
   selector:
     app: gitops-hello-world-gcb
-  type: LoadBalancer
+  type: ClusterIP

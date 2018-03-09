@@ -12,7 +12,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: gcr.io/k8s-cluster-cn/hello-world-gcb:039cff6
+      - image: gcr.io/k8s-cluster-cn/hello-world-gcb:d04c753
         name: gitops-hello-world-gcb
         ports:
         - containerPort: 8888

@@ -2,8 +2,6 @@ kind: Service
 apiVersion: v1
 metadata:
   name: gitops-hello-world-gcb
-  annotations:
-    kubernetes.io/ingress.class: istio
   labels:
     app: gitops-hello-world-gcb
   namespace: staging
